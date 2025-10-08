@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+    - primary meta tags
+  -->
+    <title>FTech - Camera And Fashion</title>
+    <meta name="title" content="FTech - Camera And Fashion" />
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-light.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- 
+   - css link
+  -->
+    <link href="./dist/style.css" rel="stylesheet" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+    - material icon link
+  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block"
+    />
+
+    <!-- 
+    - script link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+    <script type="module" src="./assets/js/download-auth.js"></script>
+    <script type="module" src="./assets/js/main-auth.js"></script>
+  </head>
+  <body class="bg-gray-50 bg-papaya_whip">
+    <header class="header active" data-header>
+      <div
+        class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+      >
+        <!-- Logo bên trái -->
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/Logo.png"
+            width="40"
+            height="5"
+            alt="cozynest"
+            class="xxl:w-40"
+          />
+        </a>
+
+        <!-- Navbar căn giữa -->
+        <nav
+          class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+          data-navbar
+        >
+          <button
+            class="nav-close-btn md:hidden"
+            aria-label="close menu"
+            data-nav-toggler
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
+          </button>
+
+          <ul class="flex items-center gap-5 md:gap-7">
+            <li>
+              <a href="index.html" class="navbar-link">Home</a>
+            </li>
+
+            <li>
+              <button
+                id="shopBtn"
+                class="navbar-link flex items-center gap-2"
+                aria-label="shop"
+                data-dropdown-toggler
+              >
+                Shop
+              </button>
+            </li>
+
+            <li>
+              <a href="index.html" class="navbar-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="" class="navbar-link">Preset</a>
+            </li>
+
+            <li>
+              <a href="#info" class="navbar-link">About Us</a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
+          id="authSection"
+        >
+          <a
+            href="login.html"
+            id="loginBtn"
+            class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
+          >
+            Login
+          </a>
+        </div>
+
+        <!-- Overlay dành cho mobile menu -->
+        <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
+      </div>
+    </header>
+    <section class="w-full px-0 pt-28 pb-4 space-y-8">
+      <!-- Tiêu đề -->
+      <div class="text-center space-y-2">
+        <h1 class="text-3xl md:text-4xl font-bold text-alabaster">
+          LUT và Preset phân loại màu miễn phí
+        </h1>
+        <p class="text-base md:text-lg font-semibold text-gray-300">
+          Lớp phủ thẩm mỹ và cài đặt sẵn phân loại màu giúp bạn dễ dàng chuyển
+          đổi cảnh quay
+        </p>
+      </div>
+      <!-- Thanh filter (không có search box) -->
+      <div
+        class="bg-eerie_black text-alabaster py-4 rounded-xl shadow-md max-w-[1370px] mx-auto mt-10"
+        style="margin-top: 3rem"
+      >
+        <div class="flex justify-center items-center gap-5">
+          <!-- Filter Buttons -->
+          <button
+            class="filter-btn px-10 py-3.5 rounded-full text-[1.05rem] font-semibold text-alabaster bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600 hover:from-butterscotch hover:to-yellow-400 hover:text-black shadow-md transition duration-300 ease-out min-w-[200px] text-center"
+            data-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            class="filter-btn px-10 py-3.5 rounded-full text-[1.05rem] font-semibold text-alabaster bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600 hover:from-butterscotch hover:to-yellow-400 hover:text-black shadow-md transition duration-300 ease-out min-w-[200px] text-center"
+            data-filter="after"
+          >
+            After Effects
+          </button>
+
+          <button
+            class="filter-btn px-10 py-3.5 rounded-full text-[1.05rem] font-semibold text-alabaster bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600 hover:from-butterscotch hover:to-yellow-400 hover:text-black shadow-md transition duration-300 ease-out min-w-[220px] text-center"
+            data-filter="davinci"
+          >
+            DaVinci Resolve
+          </button>
+
+          <button
+            class="filter-btn px-10 py-3.5 rounded-full text-[1.05rem] font-semibold text-alabaster bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600 hover:from-butterscotch hover:to-yellow-400 hover:text-black shadow-md transition duration-300 ease-out min-w-[200px] text-center"
+            data-filter="premiere"
+          >
+            Premiere Pro
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main class="py-12 space-y-16">
+      <!-- After Effects -->
+      <ul
+        class="grid-list grid gap-3 mt-6 xs:grid-cols-2 md:grid-cols-3 md:max-w-[800px] md:mx-auto lg:grid-cols-5 lg:gap-4 lg:max-w-[1370px] xl:gap-5"
+      >
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Dynamic Opener.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853613/15151764_Dynamic_Opener_iyybsa.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1cXYbRMVlg-68yhy3POsMw2xNnPkR8vQY/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Dyanamic Opener</p>
+            <p class="text-sm font-inter text-gray-500">
+              Mở đầu ấn tượng cho video của bạn.
+            </p>
+          </div>
+        </li>
+
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Audio Visualize.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853616/10510893_Audio_Visualizer__Sound_Keys_Visualizer__Podcast_Visualizer_fyoew4.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/16NjOfPioY1ex_DnOun4WABDM0KRlko6K/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Audio Visualizer</p>
+            <p class="text-sm font-inter text-gray-500">
+              Biểu đồ âm thanh sống động.
+            </p>
+          </div>
+        </li>
+
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Timer Typography.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853621/45948678_Timer_Typography_Titles_hdc9jl.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1kVOUhpsDtqg8HpAjiTIl4WI2lrK0IrBJ/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Timer Typography</p>
+            <p class="text-sm font-inter text-gray-500">
+              Time-Count với phong cách hiện đại.
+            </p>
+          </div>
+        </li>
+
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Typography .png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853626/57617346_Typography_Slides_juo6tm.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1sWyh7JuHnCVR4mDeeegxeEQ2erCvi960/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Typography Slides</p>
+            <p class="text-sm font-inter text-gray-500">
+              Trình chiếu văn bản với hiệu ứng động.
+            </p>
+          </div>
+        </li>
+
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Social Media Lower.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853627/57188025_Social_Media_Lower_Thirds_AE_j1nbbm.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Download button -->
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                title="Download file 1"
+                data-download="https://drive.google.com/file/d/1ES8kNq10Xr2J18oIAJFb789xEuguzRx9/view?usp=drive_link"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Social Media Lower Thirds
+            </p>
+            <p class="text-sm text-gray-500">
+              Giới thiệu mạng xã hội chuyên nghiệp.
+            </p>
+          </div>
+        </li>
+
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Speed Ramp .png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853640/58890249_Speed_Ramp_Transition_Presets_rhxtt1.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Download button -->
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                title="Download file 1"
+                data-download="https://drive.google.com/file/d/1-8_znFzw1v26WCivPznoLcaE45ki6-sx/view?usp=drive_link"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Speed Ramp</p>
+            <p class="text-sm text-gray-500">Tăng giảm tốc độ video mượt mà.</p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Beauty Fashion .png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853656/Beauty_Fashion_Intro_Opener_33671823_cf7vk7.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1TvOoP3cF6Rb9eHRIAOPMVY-ZnbBHhcYP/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Beauty Fashion Intro</p>
+            <p class="text-sm font-inter text-gray-500">
+              Mở đầu phong cách cho video thời trang.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/The Intro.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759853827/Intro_-_Intro_Opener_1662150_hjdnqc.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1FIUqLkrPFCRM_DbHzeCkoTUWytYfY57N/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">The Intro</p>
+            <p class="text-sm font-inter text-gray-500">
+              Mở đầu ấn tượng cho video của bạn.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Hallucination .png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854387/35847973_Hallucination_Effects_puqt75.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1r3alXty-D3ouU7zlsuTpkecpQ0LbPQDB/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Hallucination Effects</p>
+            <p class="text-sm font-inter text-gray-500">
+              Hiệu ứng ảo giác độc đáo cho video.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Tunnel.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854387/49451455_Infinite_Tunnel_Transitions_wrmc7t.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1OETAhZPyMa5wkJTbIjhZZDxdVtsrsQqH/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Infinite Tunnel Transitions
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Chuyển cảnh hầm vô tận độc đáo.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Social Media Post.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854393/58127038_Social_media_posts_gnl4tc.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1dGDMrAwMc7zwG0CKH4inqRygLoY2gxsb/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Social Media Posts</p>
+            <p class="text-sm font-inter text-gray-500">
+              Mẫu bài đăng mạng xã hội đẹp mắt.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Retro Film Color.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854395/53037538_Retro_Film_Color_Overlays_gop2hq.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1LWmi9uGJ5StLzQ-X3rskgVbIEAIPA-XT/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Retro Film Color Overlays
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Hiệu ứng màu phim cổ điển.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/VintageBurn.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854397/58328764_Vintage_Burn_Transitions_ctuxyx.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1tVzzdzN2TzSo0dyw6DzFbgPK8LCN_a-7/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Vintage Burn Transitions
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Chuyển cảnh sang trọng cổ điển.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Ink SlideShow.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854398/36192230_Cinematic_Ink_Slideshow_For_DaVinci_Resolve_gfzqtm.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/18ZuLlAkBOUgST-hphNNiL6KmKx3DiSUz/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Ink SlideShow</p>
+            <p class="text-sm font-inter text-gray-500">
+              Trình chiếu mực nước nghệ thuật.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/SocialMedia.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854399/58366764_Social_Media_Counter_DR_szxksr.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1xpfYLziMRgkds-xJ2KehxeXZQTufvQEx/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Social Media Counter</p>
+            <p class="text-sm font-inter text-gray-500">
+              Đếm người theo dõi mạng xã hội.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/PaperTear.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854401/59061819_Paper_Tear_Transitions_b5neup.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1_8zMurbz1elYYj3KiXGVo0J6Sp956tAM/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Paper Tear Transistions
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Hiệu ứng xé giấy sáng tạo.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Film Elements.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854405/59633226_Film_Elements_Transitions_for_DaVinci_Resolve_hnoipj.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1CbjZB-NCWczB9i7aU0znEduC_MZHeWd_/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Film Elements Transitions
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Hiệu ứng phim nghệ thuật cho video.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Nostalgia.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854410/47414248_Nostalgia_Wedding_LUTs_Pack_t58znu.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/19QEvO5I-l7T3060ZmCBK3sBPMSCbwUFL/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Nostalgia Wedding LUTs
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Vẻ đẹp cổ điển cho video cưới.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Text Highlight.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854418/59286965_Text_Highlight_Davinci_Resolve_vv8qni.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/15a_WeXkJxHgmkbUOWHdhkd-DH61_7WuS/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Text Highlight</p>
+            <p class="text-sm font-inter text-gray-500">
+              Hiệu ứng làm nổi bật chữ độc đáo.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="davinci"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/SoftSkinLuts.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854431/Soft_Skin_LUTs_DR_51884388_j7ap1d.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/13xT4B0lpe5EavutvLigOSBLUbi3fuw3T/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Soft Skin LUTs</p>
+            <p class="text-sm font-inter text-gray-500">
+              Làm da mịn màng tự nhiên.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="premiere"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Object Transitions.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854775/59718168_Object_Transitions_MOGRT_krti0a.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1Twky0XlDMgZ-dl_nvAPmhg06HLqgnrJf/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Object Transitions</p>
+            <p class="text-sm font-inter text-gray-500">
+              Chuyển cảnh sáng tạo với đối tượng.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="premiere"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Sketch Overlay.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854776/59652554_Sketch_Overlay_Toolkit_for_Premiere_Pro_xbznoo.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1QRo0Q4rG-STQhwgePR5NWw-g9A4AjKcV/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Sketch Overlay Toolkit
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Bộ công cụ hiệu ứng phác thảo.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="premiere"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Pencil Overlay .png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854804/59652432_Pencil_Overlay_Toolkit_for_Premiere_Pro_cnvpze.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1BC8Oiq9RkApnMmjz725N74FeB4LZsdsZ/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">
+              Pencil Overlay Toolkit
+            </p>
+            <p class="text-sm font-inter text-gray-500">
+              Bộ công cụ phác thảo bút chì.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="premiere"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Film Transistions.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759854781/56625197_Film_transitions_for_Premiere_Pro_znsd0p.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1_2wXjqLV3ZGGHU6mnLvgNJhap7XB4eNV/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Film Transistions</p>
+            <p class="text-sm font-inter text-gray-500">
+              Hiệu ứng chuyển cảnh phim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+          data-category="after"
+        >
+          <div class="relative overflow-hidden rounded-lg">
+            <!-- Ảnh đại diện -->
+            <figure class="img-holder h-80">
+              <img
+                src="./assets/images/Text Snapshop.png"
+                width="256"
+                height="320"
+                loading="lazy"
+                alt="Product Thumbnail"
+                class="img-cover duration-[0.5s] ease-linear group-hover:scale-105"
+              />
+            </figure>
+
+            <!-- Các nút action -->
+            <div
+              class="bg-[#d89245c7] text-white px-3 py-1 absolute top-2/4 left-2/4 -translate-x-2/4 flex items-center space-x-2 opacity-0 duration-75 ease-linear group-hover:-translate-y-2/4 group-hover:opacity-100 rounded-lg"
+            >
+              <!-- Wishlist -->
+              <button
+                type="button"
+                data-cart-toggler
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform"
+                title="Add to wishlist"
+              >
+                <ion-icon
+                  name="heart-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <!-- Play video button (mở popup video) -->
+              <button
+                class="h-9 w-9 grid place-items-center hover:scale-110 transition-transform view-video-btn"
+                data-video="https://res.cloudinary.com/df62isadv/video/upload/v1759860451/11174350_Text_Message_Chat_oy3lbj.mp4"
+                title="Watch Video"
+              >
+                <ion-icon
+                  name="play-outline"
+                  aria-hidden="true"
+                  class="text-[22px]"
+                ></ion-icon>
+              </button>
+
+              <a
+                class="download-btn h-9 w-9 grid place-items-center hover:scale-110 transition-transform cursor-pointer"
+                data-download="https://drive.google.com/file/d/1dzP3nBz3wzUQ-zw19oJYu0nBLR7N2OPv/view?usp=drive_link"
+                title="Tải từ Google Drive"
+              >
+                <ion-icon
+                  name="download-outline"
+                  class="text-[22px]"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nội dung sản phẩm -->
+          <div class="card-content space-y-2 text-center">
+            <p class="text-lg font-bold text-gray-800">Text Message</p>
+            <p class="text-sm font-inter text-gray-500">
+              Ghi lại tin nhắn văn bản.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <hr class="border-black border-t-2" />
+    <footer id="info" class="bg-papaya_whip">
+      <div class="container mx-auto px-3 py-12">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-10"
+        >
+          <!-- Tiêu đề -->
+          <div
+            class="flex flex-col items-center md:items-start text-center md:text-left"
+          >
+            <h2 class="text-caf_noir font-inter font-bold text-3xl md:text-4xl">
+              Liên hệ với <br />
+              chúng tôi tại
+            </h2>
+          </div>
+
+          <!-- Mailing Address -->
+          <div class="flex flex-col space-y-2">
+            <span class="text-caf_noir font-bold">Mailing Address</span>
+            <p>
+              Đại học FPT <br />
+              Hòa Lạc
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col space-y-2">
+            <span class="text-caf_noir font-bold">Email Address</span>
+            <a href="mailto:hello@reallygreatsite.com" class="hover:underline">
+              ftechexe201@gmail.com
+            </a>
+          </div>
+
+          <!-- Social + Phone -->
+
+          <div class="flex flex-col space-y-1">
+            <span class="text-caf_noir font-bold">Phone Number</span>
+            <a href="tel:(123) 456 7890">(+84) 795282609</a>
+            <div class="flex flex-col space-y-4">
+              <div class="flex gap-2">
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-twitter"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-facebook"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-github"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-instagram"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer bottom -->
+        <div class="footer-bottom mt-12 text-center space-y-2">
+          <p>&copy; 2025 | All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Popup giỏ hàng -->
+    <div
+      id="cart-popup"
+      class="fixed inset-0 bg-black/50 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+    >
+      <div class="bg-white rounded-lg w-96 p-6 relative">
+        <!-- Nút đóng -->
+        <button
+          type="button"
+          id="close-cart-popup"
+          class="absolute top-2 right-2 text-gray-600 hover:text-black"
+        >
+          ✖
+        </button>
+
+        <h2 class="text-xl font-bold mb-4">
+          Để lại thông tin cho chúng tôi để nhận được nhiều thông tin và ưu đãi
+          !
+        </h2>
+
+        <form
+          id="order-form"
+          action="https://formspree.io/f/mvgbljyr"
+          method="POST"
+          class="space-y-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Họ và tên"
+            class="w-full border p-2 rounded"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="w-full border p-2 rounded"
+            required
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Số điện thoại"
+            class="w-full border p-2 rounded"
+            required
+          />
+          <p>
+            Chúng tôi sẽ liên hệ với bạn sớm nhất có thể! Cảm ơn bạn đã ủng hộ
+            FTech.
+          </p>
+          <button
+            type="submit"
+            class="w-full bg-[#d89245] text-white py-2 rounded hover:bg-[#b86e2e]"
+          >
+            Gửi
+          </button>
+
+          <!-- ⚠️ Đây là phần quan trọng -->
+          <p id="form-message" class="hidden text-green-600 text-center mt-2">
+            Gửi thành công!
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- 
+    - ionicon link
+  -->
+    <!-- Popup xem video -->
+    <div
+      id="video-popup"
+      class="fixed inset-0 bg-black/90 hidden justify-center items-center z-50"
+    >
+      <div class="relative w-full max-w-4xl mx-auto p-4">
+        <!-- Video -->
+        <video id="popup-video" class="w-full max-h-[80vh] rounded-lg" controls>
+          <source src="" type="video/mp4" />
+          Trình duyệt của bạn không hỗ trợ video.
+        </video>
+      </div>
+    </div>
+    <div
+      id="loginPopup"
+      class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg p-6 w-80 shadow-lg text-center">
+        <h2 class="text-xl font-bold mb-4 text-gray-800">Yêu cầu đăng nhập</h2>
+        <p class="text-gray-600 mb-6">
+          Bạn cần đăng nhập để tải tài nguyên này.
+        </p>
+        <div class="flex justify-center gap-3">
+          <button
+            id="closePopup"
+            class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition"
+          >
+            Đóng
+          </button>
+          <a
+            href="login.html"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          >
+            Đăng nhập
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("[data-header]");
+        if (!header) return;
+
+        // add ngay
+        header.classList.add("active");
+
+        // nếu có script khác xoá class thì tự động thêm lại
+        const mo = new MutationObserver(() => {
+          if (!header.classList.contains("active")) {
+            header.classList.add("active");
+          }
+        });
+        mo.observe(header, { attributes: true, attributeFilter: ["class"] });
+      });
+    </script>
+    <script>
+      window.addEventListener("load", () => {
+        const header = document.querySelector(".header");
+        const next = header.nextElementSibling;
+        if (header && next) {
+          const h = header.offsetHeight + 50;
+          next.style.marginTop = h + "px";
+        }
+      });
+    </script>
+
+    <script>
+      const popup = document.getElementById("product-popup");
+      const closePopup = document.getElementById("close-popup");
+
+      document
+        .querySelectorAll('ion-icon[name="eye-outline"]')
+        .forEach((icon) => {
+          icon.addEventListener("click", (e) => {
+            e.preventDefault();
+            popup.classList.remove("opacity-0", "pointer-events-none");
+            popup.classList.add("opacity-100");
+          });
+        });
+
+      closePopup.addEventListener("click", () => {
+        popup.classList.add("opacity-0", "pointer-events-none");
+        popup.classList.remove("opacity-100");
+      });
+
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+          popup.classList.add("opacity-0", "pointer-events-none");
+          popup.classList.remove("opacity-100");
+        }
+      });
+    </script>
+    <script>
+      // Lấy tất cả nút lọc
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      // Lấy tất cả các item (li)
+      const productItems = document.querySelectorAll("li[data-category]");
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filterValue = btn.dataset.filter;
+
+          // Loại bỏ trạng thái active ở tất cả nút
+          filterButtons.forEach((b) =>
+            b.classList.remove(
+              "from-butterscotch",
+              "to-yellow-400",
+              "text-black"
+            )
+          );
+
+          // Thêm hiệu ứng active cho nút đang chọn
+          btn.classList.add("from-butterscotch", "to-yellow-400", "text-black");
+
+          // Lọc danh sách sản phẩm
+          productItems.forEach((item) => {
+            const category = item.dataset.category;
+
+            if (filterValue === "all" || category === filterValue) {
+              item.classList.remove("hidden");
+              item.classList.add("block");
+            } else {
+              item.classList.add("hidden");
+              item.classList.remove("block");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script>
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const items = document.querySelectorAll(".filter-item");
+
+      filterBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+          const filter = btn.dataset.filter;
+          filterBtns.forEach((b) =>
+            b.classList.remove("bg-butterscotch", "text-white")
+          );
+          btn.classList.add("bg-butterscotch", "text-white");
+
+          items.forEach((item) => {
+            if (filter === "all" || item.dataset.category === filter) {
+              item.classList.remove("hidden");
+            } else {
+              item.classList.add("hidden");
+            }
+          });
+        })
+      );
+    </script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

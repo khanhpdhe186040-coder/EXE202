@@ -1302,6 +1302,11 @@ video {
   letter-spacing: 0.025em;
 }
 
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+
 .text-butterscotch {
   --tw-text-opacity: 1;
   color: rgb(216 146 69 / var(--tw-text-opacity, 1));
@@ -1490,6 +1495,12 @@ ion-icon {
   position: relative;
 }
 
+section .dropdown.flex.items-center {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
 .dropdown-content {
   visibility: hidden;
   height: 0px;
@@ -1659,6 +1670,12 @@ ion-icon {
   overflow: hidden;
 }
 
+section .slider.flex.items-center {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
 .slider-item {
   position: absolute;
   top: 0px;
@@ -1753,6 +1770,24 @@ ion-icon {
   padding-right: 1rem;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.22, 0.37, 1, 1);
+}
+
+section .relative.header.items-center {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
+section .relative.flex.header {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
+section .header.flex-col.md\:flex-row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (min-width: 1200px) {
@@ -1913,6 +1948,12 @@ ion-icon {
   border-radius: 9999px;
 }
 
+section .cart-toggler.flex.items-center {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
 .cart-toggler::before {
   position: absolute;
   right: 0px;
@@ -2009,6 +2050,12 @@ ion-icon {
   position: relative;
   background-color: #4f3120ff;
   padding-top: 5rem;
+}
+
+section .hero.flex.items-center {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
 }
 
 @media (min-width: 1200px) {
@@ -2126,6 +2173,42 @@ ion-icon {
   .parallax {
     min-height: 24rem;
   }
+}
+
+/* --- FIX: Search + Filter layout --- */
+
+section .filter-btn,
+section button.filter-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Giới hạn chiều rộng search box và không cho dãn */
+
+section .relative.flex.items-center {
+  max-width: 30rem;
+  /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
+/* Đảm bảo flex hàng ngang giữa search và buttons */
+
+section .flex.flex-col.md\:flex-row {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.filter-btn {
+  transition: all 0.25s ease-in-out !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
 }
 
 .before\:absolute::before {

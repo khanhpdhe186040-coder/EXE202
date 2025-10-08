@@ -22,7 +22,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    alert('Đăng nhập thành công!');
     window.location.href = "index.html";
   } catch (error) {
     alert('Lỗi đăng nhập: ' + error.message);
@@ -35,16 +34,17 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
   const email = document.getElementById('regEmail').value;
   const password = document.getElementById('regPassword').value;
   const username = document.getElementById('regUsername').value;
+  const wantsNewsletter = document.getElementById('newsletterCheckbox').checked; 
+
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-
-    // Lưu vào Firestore
     await setDoc(doc(db, "users", user.uid), {
       email: user.email,
       username: username,
-      role: "free",
-      createdAt: new Date()
+      role: "user",
+      createdAt: new Date(),
+      newsletter: wantsNewsletter 
     });
 
     alert('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.');
@@ -53,6 +53,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     alert('Lỗi đăng ký: ' + error.message);
   }
 });
+
 
 // Quên mật khẩu
 document.getElementById('forgotPasswordForm').addEventListener('submit', async (e) => {
@@ -71,16 +72,23 @@ document.getElementById('forgotPasswordForm').addEventListener('submit', async (
 // Hàm ẩn/hiện form
 // ===== Toggle giữa các form =====
 function toggleForms(form) {
-  // Ẩn tất cả form
-  document.getElementById('loginForm').classList.add('hidden');
-  document.getElementById('registerForm').classList.add('hidden');
-  document.getElementById('forgotPasswordForm').classList.add('hidden');
+  const loginSection = document.getElementById('loginSection');
+  const registerForm = document.getElementById('registerForm');
+  const forgotPasswordForm = document.getElementById('forgotPasswordForm');
 
-  // Hiện form cần thiết
-  if (form === 'login') document.getElementById('loginForm').classList.remove('hidden');
-  if (form === 'register') document.getElementById('registerForm').classList.remove('hidden');
-  if (form === 'forgot') document.getElementById('forgotPasswordForm').classList.remove('hidden');
+  loginSection.classList.add('hidden');
+  registerForm.classList.add('hidden');
+  forgotPasswordForm.classList.add('hidden');
+
+  if (form === 'login') {
+    loginSection.classList.remove('hidden');
+  } else if (form === 'register') {
+    registerForm.classList.remove('hidden');
+  } else if (form === 'forgot') {
+    forgotPasswordForm.classList.remove('hidden');
+  }
 }
+
 
 // ===== Gắn sự kiện cho các nút =====
 document.getElementById('showRegisterForm').addEventListener('click', (e) => {
@@ -119,12 +127,10 @@ document.getElementById('googleLoginBtn').addEventListener('click', async () => 
       await setDoc(userRef, {
         username: user.displayName || "Người dùng",
         email: user.email,
-        role: "free",
+        role: "user",
         createdAt: new Date()
       });
     }
-
-    alert(`Chào mừng ${user.displayName || user.email}!`);
     window.location.href = "index.html";
   } catch (error) {
     alert('Lỗi đăng nhập Google: ' + error.message);

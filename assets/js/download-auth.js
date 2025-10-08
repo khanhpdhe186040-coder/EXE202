@@ -19,13 +19,38 @@ downloadButtons.forEach(button => {
     e.preventDefault();
 
     const fileUrl = button.getAttribute('data-download');
+    if (!fileUrl) {
+      alert("Không tìm thấy liên kết tải xuống!");
+      return;
+    }
 
+    // Nếu chưa đăng nhập → bật popup
     if (!currentUser) {
-      // Chưa đăng nhập -> hiện popup
       loginPopup.classList.remove('hidden');
-    } else {
-      // Đã đăng nhập -> tải file
-      window.location.href = fileUrl;
+      return;
+    }
+
+    // Nếu là link ngoài (http hoặc https)
+    if (fileUrl.startsWith('http://') || fileUrl.startsWith('https://')) {
+      // Xử lý riêng link Google Drive: tự động chuyển sang dạng download
+      let finalUrl = fileUrl;
+      const driveMatch = fileUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)\//);
+      if (driveMatch) {
+        const id = driveMatch[1];
+        finalUrl = `https://drive.google.com/uc?export=download&id=${id}`;
+      }
+
+      window.open(finalUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // Nếu là file cục bộ trong dự án
+    else {
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = fileUrl.split('/').pop(); // Tên file
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   });
 });

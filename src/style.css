@@ -13,6 +13,7 @@ button {
   @apply block;
 }
 
+
 html {
   @apply scroll-smooth;
 }
@@ -532,4 +533,36 @@ ion-icon {
   
   /* responsive for xl:1400px screen */
   xl:min-h-96;
+}
+
+/* --- FIX: Search + Filter layout --- */
+section .filter-btn,
+section button.filter-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Giới hạn chiều rộng search box và không cho dãn */
+section .relative.flex.items-center {
+  max-width: 30rem; /* tương đương w-64 */
+  flex-shrink: 0;
+}
+
+/* Đảm bảo flex hàng ngang giữa search và buttons */
+section .flex.flex-col.md\:flex-row {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.filter-btn {
+  transition: all 0.25s ease-in-out !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
 }

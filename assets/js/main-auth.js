@@ -58,7 +58,6 @@ async function renderUserMenu(user) {
     logoutBtn.addEventListener('click', async () => {
       try {
         await signOut(auth);
-        alert('Đã đăng xuất!');
       } catch (error) {
         console.error("Lỗi khi logout:", error.message);
         alert('Có lỗi xảy ra khi đăng xuất.');
