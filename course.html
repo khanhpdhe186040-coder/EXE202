@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+    - primary meta tags
+  -->
+    <title>FTech - Camera And Fashion</title>
+    <meta name="title" content="FTech - Camera And Fashion" />
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-light.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- 
+   - css link
+  -->
+    <link href="./dist/style.css" rel="stylesheet" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+    - material icon link
+  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block"
+    />
+
+    <!-- 
+    - script link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+    <script type="module" src="./assets/js/download-auth.js"></script>
+    <script type="module" src="./assets/js/main-auth.js"></script>
+  </head>
+  <body>
+    <header class="header active" data-header>
+      <div
+        class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+      >
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/Logo.png"
+            width="40"
+            height="5"
+            alt="cozynest"
+            class="xxl:w-40"
+          />
+        </a>
+        <!-- Navbar căn giữa -->
+        <nav
+          class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+          data-navbar
+        >
+          <button
+            class="nav-close-btn md:hidden"
+            aria-label="close menu"
+            data-nav-toggler
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
+          </button>
+
+          <ul class="flex items-center gap-5 md:gap-7">
+            <li>
+              <a href="index.html" class="navbar-link">Trang Chủ</a>
+            </li>
+
+            <li class=" md:hidden">
+              <button
+                id="shopBtn"
+                class="navbar-link flex items-center gap-2"
+                aria-label="shop"
+                data-dropdown-toggler
+              >
+                Shop
+              </button>
+            </li>
+            <li>
+              <a href="course.html" class="navbar-link">Khóa Học </a>
+            </li>
+            <li>
+              <a href="blog.html" class="navbar-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="preset.html" class="navbar-link">LUT & Preseet</a>
+            </li>
+
+            <li>
+              <a href="#info" class="navbar-link">Liên Hệ</a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
+          id="authSection"
+        >
+          <a
+            href="login.html"
+            id="loginBtn"
+            class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
+          >
+            Login
+          </a>
+        </div>
+
+        <!-- Overlay dành cho mobile menu -->
+        <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
+      </div>
+    </header>
+    <div class="w-full h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10 bg-gray-50">
+  <!-- Ảnh khóa học -->
+  <div class="flex-shrink-0">
+    <img
+      src="assets/images/course.png"
+      alt="Khóa học"
+      class="w-[250px] sm:w-[300px] md:w-[400px] lg:w-[500px] object-cover rounded-xl shadow-2xl"
+      style="margin-top: 50px;"
+    />
+  </div>
+
+  <!-- Thông tin khóa học -->
+  <div class="text-center md:text-left max-w-lg flex flex-col items-center md:items-start justify-center">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-gray-800">
+      Khóa Học Sắp Ra Mắt
+    </h1>
+    <p class="text-md sm:text-lg md:text-xl mb-6 text-gray-600">
+      Chúng tôi đang hoàn thiện nội dung khóa học. Vui lòng quay lại sau!
+    </p>
+  </div>
+</div>
+
+  </body>
+</html>

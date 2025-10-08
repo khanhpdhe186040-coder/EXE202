@@ -51,6 +51,7 @@
     <!-- 
     - script link
   -->
+  <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/script.js" defer></script>
     <script type="module" src="./assets/js/download-auth.js"></script>
     <script type="module" src="./assets/js/main-auth.js"></script>
@@ -61,30 +62,82 @@
     - #Header
   -->
 
-    <header class="header active" data-header>
-        <div class="container relative flex items-center justify-between px-3 py-5 mx-auto bg-">
-            <!-- Logo bên trái -->
-            <a href="index.html" class="logo">
-                <img
-                  src="./assets/images/Logo.png"
-                  width="40"
-                  height="5"
-                  alt="cozynest"
-                  class="xxl:w-40"
-                />
-              </a>
+  <header class="header active" data-header>
+    <div
+      class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+    >
+      <a href="index.html" class="logo">
+        <img
+          src="./assets/images/Logo.png"
+          width="40"
+          height="5"
+          alt="cozynest"
+          class="xxl:w-40"
+        />
+      </a>
+      <!-- Navbar căn giữa -->
+      <nav
+        class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+        data-navbar
+      >
+        <button
+          class="nav-close-btn md:hidden"
+          aria-label="close menu"
+          data-nav-toggler
+        >
+          <span class="material-symbols-rounded" aria-hidden="true"
+            >close</span
+          >
+        </button>
 
-            <div class="rounded-md overflow-hidden flex items-center  lg:fixed lg:right-5" id="authSection">
-                <a href="login.html" id="loginBtn"
-                    class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition">
-                    Login
-                </a>
-            </div>
+        <ul class="flex items-center gap-5 md:gap-7">
+          <li>
+            <a href="index.html" class="navbar-link">Trang Chủ</a>
+          </li>
 
-            <!-- Overlay dành cho mobile menu -->
-            <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
-        </div>
-    </header>
+          <li class=" md:hidden">
+            <button
+              id="shopBtn"
+              class="navbar-link flex items-center gap-2"
+              aria-label="shop"
+              data-dropdown-toggler
+            >
+              Shop
+            </button>
+          </li>
+          <li>
+            <a href="course.html" class="navbar-link">Khóa Học </a>
+          </li>
+          <li>
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="preset.html" class="navbar-link">LUT & Preseet</a>
+          </li>
+
+          <li>
+            <a href="#info" class="navbar-link">Liên Hệ</a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
+        id="authSection"
+      >
+        <a
+          href="login.html"
+          id="loginBtn"
+          class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
+        >
+          Login
+        </a>
+      </div>
+
+      <!-- Overlay dành cho mobile menu -->
+      <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
+    </div>
+  </header>
     <main style="margin-top: 100px;">
         <section class="py-8 md:py-14 bg-papaya_whip">
             <div class="bg-white container mx-auto px-3 md:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8"

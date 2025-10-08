@@ -53,6 +53,7 @@
     <!-- 
     - script link
   -->
+  <script type="module" src="./assets/js/download-count.js"></script>
     <script src="./assets/js/script.js" defer></script>
     <script type="module" src="./assets/js/download-auth.js"></script>
     <script type="module" src="./assets/js/main-auth.js"></script>
@@ -63,81 +64,82 @@
     - #Header
   -->
 
-    <header class="header" data-header>
-      <div
-        class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+  <header class="header" data-header>
+    <div
+      class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+    >
+      <a href="index.html" class="logo">
+        <img
+          src="./assets/images/Logo.png"
+          width="40"
+          height="5"
+          alt="cozynest"
+          class="xxl:w-40"
+        />
+      </a>
+      <!-- Navbar căn giữa -->
+      <nav
+        class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+        data-navbar
       >
-        <a href="index.html" class="logo">
-          <img
-            src="./assets/images/Logo.png"
-            width="40"
-            height="5"
-            alt="cozynest"
-            class="xxl:w-40"
-          />
-        </a>
-        <!-- Navbar căn giữa -->
-        <nav
-          class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
-          data-navbar
+        <button
+          class="nav-close-btn md:hidden"
+          aria-label="close menu"
+          data-nav-toggler
         >
-          <button
-            class="nav-close-btn md:hidden"
-            aria-label="close menu"
-            data-nav-toggler
+          <span class="material-symbols-rounded" aria-hidden="true"
+            >close</span
           >
-            <span class="material-symbols-rounded" aria-hidden="true"
-              >close</span
+        </button>
+
+        <ul class="flex items-center gap-5 md:gap-7">
+          <li>
+            <a href="index.html" class="navbar-link">Trang Chủ</a>
+          </li>
+
+          <li class=" md:hidden">
+            <button
+              id="shopBtn"
+              class="navbar-link flex items-center gap-2"
+              aria-label="shop"
+              data-dropdown-toggler
             >
-          </button>
+              Shop
+            </button>
+          </li>
+          <li>
+            <a href="course.html" class="navbar-link">Khóa Học </a>
+          </li>
+          <li>
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
 
-          <ul class="flex items-center gap-5 md:gap-7">
-            <li>
-              <a href="#home" class="navbar-link">Home</a>
-            </li>
+          <li>
+            <a href="preset.html" class="navbar-link">LUT & Preseet</a>
+          </li>
 
-            <li>
-              <button
-                id="shopBtn"
-                class="navbar-link flex items-center gap-2"
-                aria-label="shop"
-                data-dropdown-toggler
-              >
-                Shop
-              </button>
-            </li>
-
-            <li>
-              <a href="#blog" class="navbar-link">Blog</a>
-            </li>
-
-            <li>
-              <a href="#latest" class="navbar-link">Preset</a>
-            </li>
-
-            <li>
-              <a href="#info" class="navbar-link">About Us</a>
-            </li>
-          </ul>
-        </nav>
-        <div
-          class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
-          id="authSection"
+          <li>
+            <a href="#info" class="navbar-link">Liên Hệ</a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
+        id="authSection"
+      >
+        <a
+          href="login.html"
+          id="loginBtn"
+          class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
         >
-          <a
-            href="login.html"
-            id="loginBtn"
-            class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
-          >
-            Login
-          </a>
-        </div>
-
-        <!-- Overlay dành cho mobile menu -->
-        <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
+          Login
+        </a>
       </div>
-    </header>
 
+      <!-- Overlay dành cho mobile menu -->
+      <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
+    </div>
+  </header>
     <main>
       <!-- 
       - #Hero
@@ -276,7 +278,7 @@
               class="slider h-[450px] sm:max-w-[540px] sm:ms-5 md:max-w-full md:ms-0"
               data-slider
             >
-              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg">
+              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg" data-id="C-Agfa Vista 100">
                 <div class="relative overflow-hidden">
                   <!-- Ảnh đại diện sản phẩm -->
                   <figure
@@ -351,7 +353,7 @@
                 </div>
               </li>
 
-              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg">
+              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg" data-id="C-Fuji Neopan -2">
                 <div class="relative overflow-hidden">
                   <!-- Ảnh đại diện sản phẩm -->
                   <figure
@@ -424,7 +426,7 @@
                 </div>
               </li>
 
-              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg">
+              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg" data-id="C-Kodak Ektar - 3">
                 <div class="relative overflow-hidden">
                   <!-- Ảnh đại diện sản phẩm -->
                   <figure
@@ -498,7 +500,7 @@
                 </div>
               </li>
 
-              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg">
+              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg" data-id="C-Kodak Max - 4">
                 <div class="relative overflow-hidden">
                   <!-- Ảnh đại diện sản phẩm -->
                   <figure
@@ -572,7 +574,7 @@
                 </div>
               </li>
 
-              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg">
+              <li class="slider-item group pb-6 space-y-4 w-64 rounded-lg" data-id="C-Kodak Ultra Max - 2">
                 <div class="relative overflow-hidden">
                   <!-- Ảnh đại diện sản phẩm -->
                   <figure
@@ -732,7 +734,7 @@
             style="--width: 474px; --height: 474px"
           >
             <img
-              src="./assets/images/mainBlog1.png"
+              src="./assets/images/DQA07678.jpg"
               width="474"
               height="474"
               loading="lazy"
@@ -746,7 +748,7 @@
             style="--width: 160px; --height: 160px"
           >
             <img
-              src="./assets/images/mainBlog2.png"
+              src="./assets/images/IMG_8304.jpg"
               width="160"
               height="160"
               loading="lazy"
@@ -760,7 +762,7 @@
             style="--width: 160px; --height: 160px"
           >
             <img
-              src="./assets/images/mainBlog3.png"
+              src="./assets/images/DQA07308.jpg"
               width="160"
               height="160"
               loading="lazy"
@@ -774,7 +776,7 @@
             style="--width: 160px; --height: 160px"
           >
             <img
-              src="./assets/images/mainBlog1.png"
+              src="./assets/images/IMG_8331.jpg"
               width="160"
               height="160"
               loading="lazy"
@@ -789,7 +791,7 @@
           style="--width: 250px; --height: 500px"
         >
           <img
-            src="./assets/images/mainBlog2.png"
+            src="./assets/images/IMG_8319.jpg"
             width="250"
             height="500"
             loading="lazy"
@@ -830,7 +832,7 @@
             class="grid-list grid gap-3 mt-6 xs:grid-cols-2 md:grid-cols-3 md:max-w-[800px] md:mx-auto lg:grid-cols-5 lg:gap-4 lg:max-w-[1370px] xl:gap-5"
           >
             <li
-              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear" data-id="Nostalgia"
             >
               <div class="relative overflow-hidden rounded-lg">
                 <!-- Ảnh đại diện -->
@@ -902,7 +904,7 @@
             </li>
 
             <li
-              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear" data-id="SoftSkinLuts"
             >
               <div class="relative overflow-hidden rounded-lg">
                 <!-- Ảnh đại diện -->
@@ -972,7 +974,7 @@
             </li>
 
             <li
-              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear" data-id="SocialMedia"
             >
               <div class="relative overflow-hidden rounded-lg">
                 <!-- Ảnh đại diện -->
@@ -1045,16 +1047,16 @@
 
             <li
               class="off-card relative bg-no-repeat rounded-md bg-center bg-cover overflow-hidden p-3 xs:col-span-2 xs:mb-6 md:mb-0 md:p-5 md:order-1 lg:order-none"
-              style="background-image: url('./assets/images/Luts.jpg')"
+              style="background-image: url('./assets/images/Luts.jpg')" data-id="Luts"
             ></li>
 
             <li
               class="off-card relative bg-no-repeat rounded-md bg-center bg-cover overflow-hidden p-3 xs:col-span-2 xs:mb-6 md:mb-0 md:p-5 md:order-1 lg:order-none"
-              style="background-image: url('./assets/images/Transistions.webp')"
+              style="background-image: url('./assets/images/Transistions.webp')" data-id="Transistions"
             ></li>
 
             <li
-              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear" data-id="PaperTear"
             >
               <div class="relative overflow-hidden rounded-lg">
                 <!-- Ảnh đại diện -->
@@ -1126,7 +1128,7 @@
             </li>
 
             <li
-              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear" data-id="VintageBurn"
             >
               <div class="relative overflow-hidden rounded-lg">
                 <!-- Ảnh đại diện -->
@@ -1198,7 +1200,7 @@
             </li>
 
             <li
-              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
+              class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear" data-id="Tunnel"
             >
               <div class="relative overflow-hidden rounded-lg">
                 <!-- Ảnh đại diện -->
@@ -1303,7 +1305,7 @@
               data-slider
             >
               <li
-                class="slider-item testimonial-card bg-papaya_whip group rounded-md overflow-hidden min-w-[450px] sm:min-w-[580px] sm:max-w-[580px] sm:grid sm:grid-cols-[0.4fr_1fr] md:min-w-[756px]"
+                class="slider-item testimonial-card bg-papaya_whip group rounded-md overflow-hidden min-w-[450px] sm:min-w-[580px] sm:max-w-[580px] sm:grid sm:grid-cols-[0.4fr_1fr] md:min-w-[756px]" data-id="purchased-items-1"
               >
                 <figure
                   class="img-holder h-64 sm:h-full"
@@ -1400,6 +1402,7 @@
               </li>
 
               <li
+              data-id="purchased-items-2"
                 class="slider-item testimonial-card bg-papaya_whip group rounded-md overflow-hidden min-w-[450px] sm:min-w-[580px] sm:max-w-[580px] sm:grid sm:grid-cols-[0.4fr_1fr] md:min-w-[756px]"
               >
                 <figure
@@ -1497,6 +1500,7 @@
               </li>
 
               <li
+              data-id="purchased-items-3"
                 class="slider-item testimonial-card bg-papaya_whip group rounded-md overflow-hidden min-w-[450px] sm:min-w-[580px] sm:max-w-[580px] sm:grid sm:grid-cols-[0.4fr_1fr] md:min-w-[756px]"
               >
                 <figure
@@ -1594,6 +1598,7 @@
               </li>
 
               <li
+              data-id="purchased-items-4"
                 class="slider-item testimonial-card bg-papaya_whip group rounded-md overflow-hidden min-w-[450px] sm:min-w-[580px] sm:max-w-[580px] sm:grid sm:grid-cols-[0.4fr_1fr] md:min-w-[756px]"
               >
                 <figure

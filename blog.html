@@ -9,32 +9,62 @@
     gtag('js', new Date());
     gtag('config', 'G-KNTPSGH1HF');
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- primary meta tags -->
-  <title>FTech - Blog Listing</title>
-  <meta name="title" content="FTech - Blog Listing" />
-  <!-- favicon -->
-  <link rel="shortcut icon" href="./assets/images/favicon-light.svg" type="image/svg+xml" />
-  <!-- css link -->
-  <link href="./dist/style.css" rel="stylesheet" />
-  <!-- google font link -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- material icon link -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block" />
-  <!-- script link -->
-  <script src="./assets/js/script.js" defer></script>
-  <script type="module" src="./assets/js/download-auth.js"></script>
-  <script type="module" src="./assets/js/main-auth.js"></script>
-</head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+     <!--
+     - primary meta tags
+   -->
+     <title>FTech - Camera And Fashion</title>
+     <meta name="title" content="FTech - Camera And Fashion" />
+ 
+     <!--
+     - favicon
+   -->
+     <link
+       rel="shortcut icon"
+       href="./assets/images/favicon-light.svg"
+       type="image/svg+xml"
+     />
+ 
+     <!-- 
+    - css link
+   -->
+     <link href="./dist/style.css" rel="stylesheet" />
+ 
+     <!-- 
+     - google font link
+   -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+       rel="stylesheet"
+     />
+ 
+     <!--
+     - material icon link
+   -->
+     <link
+       rel="stylesheet"
+       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block"
+     />
+ 
+     <!-- 
+     - script link
+   -->
+   <script src="https://cdn.tailwindcss.com"></script>
+     <script src="./assets/js/script.js" defer></script>
+     <script type="module" src="./assets/js/download-auth.js"></script>
+     <script type="module" src="./assets/js/main-auth.js"></script>
+   </head>
+
 <body class="bg-papaya_whip text-jet font-secondary">
   <!-- #Header -->
   <header class="header active" data-header>
-    <div class="container relative flex items-center justify-between px-3 py-5 mx-auto">
-      <!-- Logo bên trái -->
+    <div
+      class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+    >
       <a href="index.html" class="logo">
         <img
           src="./assets/images/Logo.png"
@@ -44,148 +74,208 @@
           class="xxl:w-40"
         />
       </a>
-      <div class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5" id="authSection">
-        <a href="login.html" id="loginBtn" class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition">
+      <!-- Navbar căn giữa -->
+      <nav
+        class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+        data-navbar
+      >
+        <button
+          class="nav-close-btn md:hidden"
+          aria-label="close menu"
+          data-nav-toggler
+        >
+          <span class="material-symbols-rounded" aria-hidden="true"
+            >close</span
+          >
+        </button>
+
+        <ul class="flex items-center gap-5 md:gap-7">
+          <li>
+            <a href="index.html" class="navbar-link">Trang Chủ</a>
+          </li>
+
+          <li class=" md:hidden">
+            <button
+              id="shopBtn"
+              class="navbar-link flex items-center gap-2"
+              aria-label="shop"
+              data-dropdown-toggler
+            >
+              Shop
+            </button>
+          </li>
+          <li>
+            <a href="course.html" class="navbar-link">Khóa Học </a>
+          </li>
+          <li>
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="preset.html" class="navbar-link">LUT & Preseet</a>
+          </li>
+
+          <li>
+            <a href="#info" class="navbar-link">Liên Hệ</a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
+        id="authSection"
+      >
+        <a
+          href="login.html"
+          id="loginBtn"
+          class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
+        >
           Login
         </a>
       </div>
+
       <!-- Overlay dành cho mobile menu -->
       <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
     </div>
   </header>
   <main style="margin-top: 100px;">
     <section class="py-8 md:py-14 bg-papaya_whip">
-      <div class="bg-white container mx-auto px-3 md:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8" style="align-items: start;">
-        <!-- CỘT TRÁI: DANH SÁCH BÀI BLOG -->
-        <div class="lg:col-span-2 p-6 shadow">
-            <h1 class="text-caf_noir font-secondary font-bold text-3xl md:text-3xl text-center mb-6 leading-tight">
-              Danh Sách Bài Viết
-            </h1>
-            <div class="space-y-5">
-              <a href="/blog1.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Blog1Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div>
-                  <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    5 Bước Làm Quen Photoshop Cho Người Mới Bắt Đầu
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Hướng dẫn chi tiết 5 bước cơ bản để làm quen với Photoshop, từ giao diện đến lưu xuất ảnh, giúp người mới tự tin bắt đầu.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog2.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Blog2Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div>
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    7 Phím Tắt Photoshop Giúp Thiết Kế Nhanh Gấp Đôi
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Khám phá 7 phím tắt hữu ích trong Photoshop để tăng tốc độ thiết kế và tối ưu hóa quy trình làm việc.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog3.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Blog3Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div>
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    Hướng Dẫn Sử Dụng CapCut Trên Máy Tính (Windows/Mac) Đơn Giản Cho Người Mới
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Hướng dẫn chi tiết cách tải, cài đặt và sử dụng CapCut trên máy tính để chỉnh sửa video chuyên nghiệp.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog4.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Blog4Pic5.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div>
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    14 Mẹo Sử Dụng Canva Giúp Thiết Kế Đẹp Và Tiết Kiệm Thời Gian
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    14 mẹo sử dụng Canva để tạo thiết kế chuyên nghiệp, nhanh chóng và sáng tạo hơn, phù hợp cho cả người mới.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog5.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Blog5Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div>
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    5 Bố Cục Chụp Ảnh Giúp Bức Hình Của Bạn Đẹp Hơn
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Tìm hiểu 5 bố cục chụp ảnh phổ biến giúp bức ảnh cân đối, hài hòa và thu hút hơn.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog6.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Blog6Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div style="margin-left:20px ;">
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    Review Sony A7 IV – Chiếc Máy Ảnh Full-frame Đa Năng Cho Nhiếp Ảnh & Quay Video
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Đánh giá Sony A7 IV, chiếc máy ảnh full-frame với cảm biến 33MP và khả năng quay 4K, lý tưởng cho nhiếp ảnh và quay video.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog7.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/CanonR6.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div style="margin-left:24px ;">
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    Đánh Giá Canon EOS R6 Mark II – Sự Cân Bằng Giữa Tốc Độ Và Chất Lượng Hình Ảnh
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Canon EOS R6 Mark II mang đến tốc độ chụp 40fps và quay 4K oversampling, hoàn hảo cho nhiếp ảnh và quay video chuyên nghiệp.
-                  </p>
-                </div>
-              </a>
-              <a href="/blog8.html" class="flex items-start gap-3 group">
-                <img src="./assets/images/Fujifilm.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-                <div style="margin-left:5px ;">
-                 <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                    Fujifilm X-T5 Review – Thiết Kế Retro, Hiệu Năng Đỉnh Cao Trong Tầm Giá
-                  </p>
-                  <p class="text-jet text-sm leading-relaxed mt-1">
-                    Fujifilm X-T5 kết hợp thiết kế retro với cảm biến 40MP và quay 6.2K, lý tưởng cho nhiếp ảnh và sáng tạo nội dung.
-                  </p>
-                </div>
-              </a>
+      <div class="bg-white container mx-auto px-3 md:px-8 py-8">
+        <h1 class="text-caf_noir font-secondary font-bold text-3xl md:text-3xl text-center mb-8 leading-tight">
+          Danh Sách Bài Viết
+        </h1>
+  
+        <!-- Lưới 2x2 -->
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+  
+          <!-- Ô 1 -->
+          <div class="p-6 shadow space-y-5">
+            <h3 class="text-2xl font-bold text-caf_noir mb-4">Review</h3>
+            <a href="/blog7.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/CanonR6.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  Đánh Giá Canon EOS R6 Mark II – Tốc Độ Và Chất Lượng Hình Ảnh
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  R6 Mark II: tốc độ chụp 40fps, quay 4K oversampling, hoàn hảo cho chuyên nghiệp.
+                </p>
+              </div>
+            </a>
+            <a href="/blog8.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Fujifilm.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  Fujifilm X-T5 Review – Thiết Kế Retro, Hiệu Năng Đỉnh Cao
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  Thiết kế retro, cảm biến 40MP, quay 6.2K – hoàn hảo cho nhiếp ảnh sáng tạo.
+                </p>
+              </div>
+            </a>
+          
+            <div class="text-right">
+              <a href="/reviewBlog.html" class="text-butterscotch font-semibold hover:underline">Xem thêm →</a>
             </div>
           </div>
-        <!-- CỘT PHẢI: CÓ THỂ BẠN QUAN TÂM -->
-        <aside class="p-6 shadow sticky top-[100px] h-fit self-start">
-          <h1 class="text-caf_noir font-secondary font-bold text-3xl md:text-3xl text-center mb-6 leading-tight">
-            Có thể bạn quan tâm
-          </h1>
-          <div class="space-y-5">
-            <a href="/blog2.html" class="flex items-center gap-3 group block hover:underline">
-              <img src="./assets/images/Blog2Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-             <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                7 Phím Tắt Photoshop Giúp Thiết Kế Nhanh Gấp Đôi
-              </p>
+  
+          <!-- Ô 2 -->
+          <div class="p-6 shadow space-y-5">
+            <h3 class="text-2xl font-bold text-caf_noir mb-4">Tutorials</h3>
+            <a href="/blog3.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Blog3Pic1.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  Hướng Dẫn Sử Dụng CapCut Trên Máy Tính (Windows/Mac)
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  Cách tải, cài đặt và sử dụng CapCut trên máy tính để chỉnh sửa video chuyên nghiệp.
+                </p>
+              </div>
             </a>
-            <a href="/blog3.html" class="flex items-center gap-3 group block hover:underline">
-              <img src="./assets/images/Blog3Pic1.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-             <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                Hướng Dẫn Sử Dụng CapCut Trên Máy Tính (Windows/Mac) Đơn Giản Cho Người Mới
-              </p>
+            <a href="/blog4.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Blog4Pic5.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  14 Mẹo Sử Dụng Canva Giúp Thiết Kế Đẹp Và Tiết Kiệm Thời Gian
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  14 mẹo sử dụng Canva để tạo thiết kế chuyên nghiệp, nhanh chóng và sáng tạo hơn.
+                </p>
+              </div>
             </a>
-            <a href="/blog4.html" class="flex items-center gap-3 group block hover:underline">
-              <img src="./assets/images/Blog4Pic5.jpg" style="width: 135px; height: 90px; object-fit: cover; border-radius: 6px; transition: opacity 0.3s;" class="group-hover:opacity-80" />
-             <p class="text-jet text-sm md:text-base font-medium block hover:underline font-bold leading-snug">
-                14 Mẹo Sử Dụng Canva Giúp Thiết Kế Đẹp Và Tiết Kiệm Thời Gian
-              </p>
-            </a>
-            <div class="text-center mt-5">
-              <a href="/index.html" class="inline-block px-4 py-2 bg-butterscotch text-white text-sm font-semibold rounded-full hover:bg-yellow-400 transition">
-                Quay lại trang chủ
-              </a>
+            <div class="text-right">
+              <a href="/tutorialBlog.html" class="text-butterscotch font-semibold hover:underline">Xem thêm →</a>
             </div>
           </div>
-        </aside>
+  
+          <!-- Ô 3 -->
+          <div class="p-6 shadow space-y-5">
+            <h3 class="text-2xl font-bold text-caf_noir mb-4">Minigames</h3>
+            <!-- <a href="/blog5.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Blog5Pic1.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  5 Bố Cục Chụp Ảnh Giúp Bức Hình Của Bạn Đẹp Hơn
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  Tìm hiểu 5 bố cục chụp ảnh giúp bức ảnh cân đối, hài hòa và thu hút hơn.
+                </p>
+              </div>
+            </a>
+            <a href="/blog6.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Blog6Pic1.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  Review Sony A7 IV – Chiếc Máy Ảnh Full-frame Đa Năng
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  Đánh giá Sony A7 IV – cảm biến 33MP, quay 4K, lý tưởng cho nhiếp ảnh và quay video.
+                </p>
+              </div>
+            </a>
+            <div class="text-right">
+              <a href="/blog5.html" class="text-butterscotch font-semibold hover:underline">Xem thêm →</a>
+            </div> -->
+            <em class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+              Coming Soon!
+            </em>
+          </div>
+  
+          <!-- Ô 4 -->
+          <div class="p-6 shadow space-y-5">
+            <h3 class="text-2xl font-bold text-caf_noir mb-4">Learning</h3>
+            <a href="/blog1.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Blog1Pic1.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  5 Bước Làm Quen Photoshop Cho Người Mới Bắt Đầu
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  Hướng dẫn 5 bước cơ bản để làm quen Photoshop, từ giao diện đến lưu ảnh, giúp người mới tự tin bắt đầu.
+                </p>
+              </div>
+            </a>
+            <a href="/blog2.html" class="flex items-start gap-3 group">
+              <img src="./assets/images/Blog2Pic1.jpg" style="width:135px;height:90px;object-fit:cover;border-radius:6px;transition:opacity 0.3s;" class="group-hover:opacity-80" />
+              <div>
+                <p class="text-jet text-sm md:text-base font-bold leading-snug hover:underline">
+                  7 Phím Tắt Photoshop Giúp Thiết Kế Nhanh Gấp Đôi
+                </p>
+                <p class="text-jet text-sm mt-1 leading-relaxed">
+                  Khám phá 7 phím tắt hữu ích để tăng tốc độ thiết kế và tối ưu hóa quy trình làm việc.
+                </p>
+              </div>
+            </a>
+            <div class="text-right">
+              <a href="/learningBlog.html" class="text-butterscotch font-semibold hover:underline">Xem thêm →</a>
+            </div>
+          </div>
+  
+        </div>
       </div>
     </section>
   </main>
+  
   <!-- #Footer -->
   <hr class="border-black border-t-2" />
   <footer id="info" class="bg-papaya_whip">

@@ -1243,11 +1243,6 @@ video {
   line-height: 2.25rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1296,15 +1291,6 @@ video {
 
 .italic {
   font-style: italic;
-}
-
-.tracking-wide {
-  letter-spacing: 0.025em;
-}
-
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
 
 .text-butterscotch {
@@ -2821,6 +2807,10 @@ section .flex.flex-col.md\:flex-row {
     min-height: 600px;
   }
 
+  .xxl\:w-40 {
+    width: 10rem;
+  }
+
   .xxl\:max-w-\[1600px\] {
     max-width: 1600px;
   }
@@ -2828,11 +2818,6 @@ section .flex.flex-col.md\:flex-row {
   .xxl\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
-  }
-
-  .xxl\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .xxl\:text-7xl {

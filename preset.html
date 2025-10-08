@@ -47,6 +47,7 @@
   -->
     <script src="./assets/js/script.js" defer></script>
     <script type="module" src="./assets/js/download-auth.js"></script>
+    <script type="module" src="./assets/js/download-count.js"></script>
     <script type="module" src="./assets/js/main-auth.js"></script>
   </head>
   <body class="bg-gray-50 bg-papaya_whip">
@@ -54,7 +55,6 @@
       <div
         class="container relative flex items-center justify-between px-3 py-5 mx-auto"
       >
-        <!-- Logo bên trái -->
         <a href="index.html" class="logo">
           <img
             src="./assets/images/Logo.png"
@@ -64,7 +64,6 @@
             class="xxl:w-40"
           />
         </a>
-
         <!-- Navbar căn giữa -->
         <nav
           class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
@@ -82,10 +81,10 @@
 
           <ul class="flex items-center gap-5 md:gap-7">
             <li>
-              <a href="index.html" class="navbar-link">Home</a>
+              <a href="index.html" class="navbar-link">Trang Chủ</a>
             </li>
 
-            <li>
+            <li class="md:hidden">
               <button
                 id="shopBtn"
                 class="navbar-link flex items-center gap-2"
@@ -95,17 +94,19 @@
                 Shop
               </button>
             </li>
-
             <li>
-              <a href="index.html" class="navbar-link">Blog</a>
+              <a href="course.html" class="navbar-link">Khóa Học </a>
+            </li>
+            <li>
+              <a href="blog.html" class="navbar-link">Blog</a>
             </li>
 
             <li>
-              <a href="" class="navbar-link">Preset</a>
+              <a href="preset.html" class="navbar-link">LUT & Preseet</a>
             </li>
 
             <li>
-              <a href="#info" class="navbar-link">About Us</a>
+              <a href="#info" class="navbar-link">Liên Hệ</a>
             </li>
           </ul>
         </nav>
@@ -183,6 +184,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="dynamic-opener"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -253,6 +255,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="audio-visualize"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -323,6 +326,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="timer-typography"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -393,6 +397,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="typography-slides"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -463,6 +468,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="social-media-lower"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -536,6 +542,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="speed-ramp"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -604,6 +611,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="beauty-fashion-intro"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -673,6 +681,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="the-intro"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -742,6 +751,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="hallucination-effects"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -811,6 +821,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="infinite-tunnel-transitions"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -882,6 +893,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="social-media-posts"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -951,6 +963,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="retro-film-color-overlays"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1022,6 +1035,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="vintage-burn-transitions"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1093,6 +1107,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="ink-slideshow"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1162,6 +1177,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="social-media-counter"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1231,6 +1247,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="paper-tear-transitions"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1302,6 +1319,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="film-elements"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1373,6 +1391,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="nostalgia-wedding-luts"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1444,6 +1463,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="text-highlight"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1513,6 +1533,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="davinci"
+          data-id="soft-skin-luts"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1582,6 +1603,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="premiere"
+          data-id="object-transitions"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1651,6 +1673,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="premiere"
+          data-id="sketch-overlay"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1722,6 +1745,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="premiere"
+          data-id="pencil-overlay"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1793,6 +1817,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="premiere"
+          data-id="film-transistions"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
@@ -1862,6 +1887,7 @@
         <li
           class="group pb-6 space-y-5 max-w-64 rounded-lg duration-75 ease-linear"
           data-category="after"
+          data-id="text-message"
         >
           <div class="relative overflow-hidden rounded-lg">
             <!-- Ảnh đại diện -->
