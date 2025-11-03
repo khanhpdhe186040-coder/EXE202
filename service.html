@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+    - primary meta tags
+  -->
+    <title>FTech - Camera And Fashion</title>
+    <meta name="title" content="FTech - Camera And Fashion" />
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-light.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- 
+   - css link
+  -->
+    <link href="./dist/style.css" rel="stylesheet" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+    - material icon link
+  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block"
+    />
+
+    <!-- 
+    - script link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+    <script type="module" src="./assets/js/download-auth.js"></script>
+    <script type="module" src="./assets/js/main-auth.js"></script>
+  </head>
+  <body>
+    <header class="header active mb-5" data-header>
+      <div
+        class="container relative flex items-center justify-between px-3 py-5 mx-auto"
+      >
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/Logo.png"
+            width="40"
+            height="5"
+            alt="cozynest"
+            class="xxl:w-40"
+          />
+        </a>
+        <!-- Navbar căn giữa -->
+        <nav
+          class="navbar absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+          data-navbar
+        >
+          <button
+            class="nav-close-btn md:hidden"
+            aria-label="close menu"
+            data-nav-toggler
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
+          </button>
+
+          <ul class="flex items-center gap-5 md:gap-7">
+            <li>
+              <a href="index.html" class="navbar-link">Trang Chủ</a>
+            </li>
+
+            <li class="md:hidden">
+              <button
+                id="shopBtn"
+                class="navbar-link flex items-center gap-2"
+                aria-label="shop"
+                data-dropdown-toggler
+              >
+                Shop
+              </button>
+            </li>
+            <li>
+              <a href="course.html" class="navbar-link">Dịch Vụ </a>
+            </li>
+            <li>
+              <a href="blog.html" class="navbar-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="preset.html" class="navbar-link">LUT & Preseet</a>
+            </li>
+
+            <li>
+              <a href="#info" class="navbar-link">Liên Hệ</a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="rounded-md overflow-hidden flex items-center lg:fixed lg:right-5"
+          id="authSection"
+        >
+          <a
+            href="login.html"
+            id="loginBtn"
+            class="px-4 py-2 text-sm font-semibold text-white bg-butterscotch rounded-lg hover:bg-yellow-400 transition"
+          >
+            Login
+          </a>
+        </div>
+
+        <!-- Overlay dành cho mobile menu -->
+        <div class="overlay md:hidden" data-overlay data-nav-toggler></div>
+      </div>
+    </header>
+    <main class="pt-24 mt-5">
+      <style>
+        .rent-section {
+          background-color: #fffaf2;
+          min-height: 100vh;
+        }
+
+        .rent-sidebar {
+          background-color: #4f3120ff;
+          border-radius: 16px;
+          padding: 1.5rem;
+          width: 220px; /* 👈 cố định chiều rộng */
+          flex-shrink: 0; /* 👈 không cho nó co lại */
+          align-self: flex-start; /* 👈 đảm bảo nằm trên cùng */
+          position: sticky;
+          top: 120px; /* 👈 dính ở dưới header */
+          color: #fff3dcff ;
+        }
+
+        .product-area {
+          flex: 4; /* Chiếm phần lớn không gian */
+        }
+
+        .product-card {
+          background-color: white;
+          border-radius: 16px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 1.25rem;
+          text-align: center;
+          transition: all 0.25s ease;
+        }
+
+        .product-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .product-image {
+          width: 324px;
+          height: 324px;
+          object-fit: contain;
+          display: block;
+        }
+      </style>
+
+      <section class="rent-section px-6 py-10">
+        <div class="container mx-auto">
+          <!-- Breadcrumb -->
+          <!-- Breadcrumb -->
+          <nav class="text-gray-500 text-sm mb-2 mt-5" aria-label="Breadcrumb">
+            <ol class="flex flex-wrap items-center space-x-1">
+              <li>
+                <a href="index.html" class="hover:text-[#d19a00] font-medium"
+                  >Trang chủ</a
+                >
+              </li>
+              <li><span>&gt;</span></li>
+              <li>
+                <a href="course.html" class="hover:text-[#d19a00] font-medium"
+                  >Dịch vụ</a
+                >
+              </li>
+              <li><span>&gt;</span></li>
+              <li class="text-gray-800 font-semibold">Thuê thiết bị</li>
+            </ol>
+          </nav>
+
+          <!-- Title -->
+          <h2
+            class="text-3xl font-bold text-gray-800 mb-10 text-center"
+            style="font-size: 40px"
+          >
+            THUÊ THIẾT BỊ
+          </h2>
+
+          <!-- Layout chia cột -->
+          <div class="flex flex-col md:flex-row md:items-start gap-10  ">
+            <!-- Sidebar -->
+            <aside class="rent-sidebar sticky top-28 h-fit self-start w-56 bg-caf_noir ">
+              <h3 class="text-xl font-semibold mb-6 text-center ">
+                THIẾT BỊ
+              </h3>
+
+              <div class="space-y-4 ">
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="filter-checkbox w-4 h-4 accent-[#d19a00]"
+                    data-filter="body"
+                  />
+                  <span class=" font-medium">BODY</span>
+                </label>
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="filter-checkbox w-4 h-4 accent-[#d19a00]"
+                    data-filter="lens"
+                  />
+                  <span class=" font-medium">LENS</span>
+                </label>
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="filter-checkbox w-4 h-4 accent-[#d19a00]"
+                    data-filter="accessory"
+                  />
+                  <span class=" font-medium"
+                    >PHỤ KIỆN MÁY ẢNH</span
+                  >
+                </label>
+              </div>
+            </aside>
+
+            <!-- Danh sách sản phẩm -->
+            <section class="product-area flex-1">
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+              >
+                <!-- Item 1 -->
+                <a href="canon6d.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon 6D.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">CANON 6D2</h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      500.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="sonyA7.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Sony A7.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      Sony A7 Mark III
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      500.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="cannonR8.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon R8.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">Cannon R8</h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      350.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="cannonrp.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon RP.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">Canon RP</h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      300.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="sonya6500.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Sony A6500.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">Sony A6500</h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      200.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="canon6d2.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon 6D Mark2.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">Canon 6D</h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      150.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="canon6d.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="body"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon 7D.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-40 h-40 object-contain mb-4"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">CANON 7D</h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      120.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="tamron28.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="lens"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Tamron 28.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-[324px] h-[324px] object-contain mb-4 product-image"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      TAMRON 28 - 75mm
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      300.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="canon5d2.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="lens"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Viltrox 85mm.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-[324px] h-[324px] object-contain mb-4 product-image"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      VILTROX 85mm F1.8 FE
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      150.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="canon5d2.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="lens"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon 24.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-[324px] h-[324px] object-contain mb-4 product-image"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      CANON 24 - 105mm F4 L
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      150.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+                <a href="canon5d2.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="lens"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Canon RF 24.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-[324px] h-[324px] object-contain mb-4 product-image"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      Canon RF 24 -105mm
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      100.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="canon5d2.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="accessory"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/Godox V860.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-[324px] h-[324px] object-contain mb-4 product-image"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      GODOX V860 III C
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      50.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+
+                <a href="djiosmo.html" class="block">
+                  <div
+                    class="product-card relative bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-200"
+                    data-category="accessory"
+                  >
+                    <!-- Ảnh nhãn giảm giá -->
+                    <img
+                      src="./assets/images/bg-discount-10.png"
+                      alt="-10%"
+                      style="width: 64px; height: 64px; object-fit: contain"
+                      class="absolute top-2 right-2"
+                    />
+
+                    <!-- Hình ảnh sản phẩm -->
+                    <img
+                      src="./assets/images/DJI Osmo.png"
+                      alt="Canon 6D2"
+                      class="mx-auto w-[324px] h-[324px] object-contain mb-4 product-image"
+                    />
+
+                    <!-- Tên và giá -->
+                    <h4 class="font-bold text-2xl text-gray-800">
+                      DJI OSMO POCKET 3
+                    </h4>
+                    <p
+                      class="italic text-base font-semibold mt-3"
+                      style="color: #d10000"
+                    >
+                      150.000 VNĐ/ NGÀY
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <hr class="border-black border-t-2" />
+    <footer id="info" class="bg-papaya_whip">
+      <div class="container mx-auto px-3 py-12">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-10"
+        >
+          <!-- Tiêu đề -->
+          <div
+            class="flex flex-col items-center md:items-start text-center md:text-left"
+          >
+            <h2 class="text-caf_noir font-inter font-bold text-3xl md:text-4xl">
+              Liên hệ với <br />
+              chúng tôi tại
+            </h2>
+          </div>
+
+          <!-- Mailing Address -->
+          <div class="flex flex-col space-y-2">
+            <span class="text-caf_noir font-bold">Mailing Address</span>
+            <p>
+              Đại học FPT <br />
+              Hòa Lạc
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col space-y-2">
+            <span class="text-caf_noir font-bold">Email Address</span>
+            <a href="mailto:hello@reallygreatsite.com" class="hover:underline">
+              ftechexe201@gmail.com
+            </a>
+          </div>
+
+          <!-- Social + Phone -->
+
+          <div class="flex flex-col space-y-1">
+            <span class="text-caf_noir font-bold">Phone Number</span>
+            <a href="tel:(123) 456 7890">(+84) 795282609</a>
+            <div class="flex flex-col space-y-4">
+              <div class="flex gap-2">
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-twitter"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-facebook"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-github"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.facebook.com/bii.quang.3"
+                  class="bg-caf_noir h-7 w-7 grid place-items-center rounded-full group"
+                >
+                  <ion-icon
+                    name="logo-instagram"
+                    class="text-papaya_whip duration-150 group-hover:scale-125"
+                  ></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer bottom -->
+        <div class="footer-bottom mt-12 text-center space-y-2">
+          <p>&copy; 2025 | All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const checkboxes = document.querySelectorAll(".filter-checkbox");
+    const productLinks = document.querySelectorAll(".product-card"); // Giữ nguyên
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        // Bỏ chọn các checkbox khác
+        checkboxes.forEach((cb) => {
+          if (cb !== checkbox) cb.checked = false;
+        });
+
+        const filter = checkbox.checked ? checkbox.dataset.filter : "all";
+
+        productLinks.forEach((product) => {
+          const category = product.dataset.category;
+          const parentLink = product.closest("a"); // lấy thẻ <a> bao quanh
+
+          if (filter === "all" || category === filter) {
+            parentLink.style.display = "block"; // hiện toàn bộ link
+          } else {
+            parentLink.style.display = "none"; // ẩn toàn bộ
+          }
+        });
+      });
+    });
+  </script>
+</html>
